@@ -1,0 +1,406 @@
+Aqui está o HTML completo com o comentário profissional de Gálatas, versículo por versículo, para os 6 capítulos. O código é funcional e mantém o design original, com todos os comentários preenchidos.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govas - Comentário de Gálatas (Versículo por Versículo)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', system-ui, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid #38bdf8;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        header span {
+            background: #38bdf8;
+            color: #0f172a;
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-left: 12px;
+            vertical-align: middle;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        .controls {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+        }
+
+        .controls label {
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        select {
+            background: #0f172a;
+            color: #f1f5f9;
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: 1px solid #334155;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        select:hover {
+            border-color: #38bdf8;
+        }
+
+        .chapter-badge {
+            background: #0f172a;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            border-left: 3px solid #38bdf8;
+        }
+
+        .verses-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 18px 22px;
+            border-radius: 18px;
+            transition: transform 0.1s ease, box-shadow 0.2s;
+            border-left: 5px solid #38bdf8;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .card:hover {
+            background: #253449;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .verse {
+            font-weight: 700;
+            color: #7dd3fc;
+            font-size: 1.1rem;
+            display: inline-block;
+            background: #0f172a;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .comment-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #cbd5e1;
+            margin-top: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 16px 20px;
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+            margin-top: 30px;
+            background: #0f172a;
+        }
+
+        .empty-message {
+            background: #1e293b;
+            border-radius: 24px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 14px 18px;
+            }
+            .verse {
+                font-size: 1rem;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    📖 Govas - Comentário de Gálatas <span>versículo por versículo</span>
+</header>
+
+<div class="container">
+    <div class="controls">
+        <div class="chapter-badge">📜 Comentário técnico-profissional</div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+            <label>🔍 Escolha o capítulo:</label>
+            <select id="capSelect">
+                <option value="1">Capítulo 1</option>
+                <option value="2">Capítulo 2</option>
+                <option value="3">Capítulo 3</option>
+                <option value="4">Capítulo 4</option>
+                <option value="5">Capítulo 5</option>
+                <option value="6">Capítulo 6</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="versesContainer" class="verses-grid">
+        <!-- Os cards serão injetados via JS -->
+        <div class="empty-message">Carregando comentários...</div>
+    </div>
+</div>
+
+<footer>
+    Desenvolvido por Govas | Comentário Bíblico Profissional — Exegese contextual, doutrina e aplicação pastoral | Gálatas: A liberdade em Cristo
+</footer>
+
+<script>
+    // ============================================================
+    // COMENTÁRIO COMPLETO VERSÍCULO POR VERSÍCULO - GÁLATAS (cap 1 a 6)
+    // Base exegética, teológica e pastoral - estilo Govas
+    // ============================================================
+
+    const commentary = {
+        1: [
+            {v:1, t:"Paulo declara seu apostolado não provindo de homens, mas por Jesus Cristo e Deus Pai que o ressuscitou — autoridade direta e divina."},
+            {v:2, t:"Inclui todos os irmãos que estão com ele; a saudação coletiva reforça a natureza comunitária da carta e do evangelho."},
+            {v:3, t:"Graça e paz: expressão paulina típica que funde a saudação grega (charis) e hebraica (shalom). A fonte é Deus Pai e o Senhor Jesus."},
+            {v:4, t:"Cristo se entregou voluntariamente pelos nossos pecados, para nos resgatar da presente era má, conforme a vontade de Deus Pai."},
+            {v:5, t:"Doxologia breve: toda glória pertence a Deus para sempre. A libertação em Cristo culmina na adoração eterna."},
+            {v:6, t:"Paulo se admira: os gálatas estão desertando tão rapidamente da graça de Cristo para um 'diferente evangelho' — preocupação pastoral urgente."},
+            {v:7, t:"Não há outro evangelho verdadeiro; o que alguns pregam não é evangelho, mas distorção que perturba a fé dos gálatas."},
+            {v:8, t:"Anátema (maldição) até sobre anjos ou apóstolos que pregarem mensagem contrária à recebida — princípio da sola scriptura implícito."},
+            {v:9, t:"Repetição solene da maldição: qualquer ensino que desvie do evangelho original está sob juízo divino. Paulo fala com autoridade apostólica."},
+            {v:10, t:"Paulo não busca aprovação humana; se agradasse a homens, não seria servo de Cristo. A motivação do ministério é a fidelidade a Deus."},
+            {v:11, t:"O evangelho pregado por Paulo não é de origem humana, nem o recebeu por tradição oral — revelação direta de Cristo."},
+            {v:12, t:"Revelação sobrenatural: Paulo não foi instruído por homens, mas por Jesus Cristo. Isso fundamenta a autoridade do evangelho da graça."},
+            {v:13, t:"Contexto pessoal: Paulo perseguia a igreja com extremo zelo judaico. Tal passado destaca a graça transformadora."},
+            {v:14, t:"Superava muitos em tradições farisaicas; seu zelo religioso pré-conversão mostra que o judaísmo não poderia ser o caminho da justificação."},
+            {v:15, t:"Deus o separou desde o ventre materno e o chamou por sua graça — vocação divina independente de méritos humanos."},
+            {v:16, t:"Revelação do Filho no apóstolo para que o anunciasse entre os gentios; imediatamente não consultou carne e sangue."},
+            {v:17, t:"Não subiu a Jerusalém aos que já eram apóstolos antes dele; foi para Arábia e retornou a Damasco. Autonomia ministerial oriunda de Deus."},
+            {v:18, t:"Três anos depois foi a Jerusalém para visitar Pedro (Cefas), ficando quinze dias — contato limitado, sem receber autorização humana."},
+            {v:19, t:"Dos apóstolos viu somente Tiago, o irmão do Senhor. Isso confirma independência do seu chamado."},
+            {v:20, t:"Juramento solene: não mente. Paulo reforça a veracidade histórica para validar seu evangelho."},
+            {v:21, t:"Depois foi para as regiões da Síria e Cilícia — áreas de atuação missionária entre gentios, longe do círculo judaico-cristão."},
+            {v:22, t:"Era pessoalmente desconhecido das igrejas da Judeia; eles apenas ouviam notícias de sua conversão."},
+            {v:23, t:"Diziam: 'Aquele que antes nos perseguia agora prega a fé que destruía'. Glorificavam a Deus por Paulo."},
+            {v:24, t:"Conclusão do capítulo: a igreja glorificava a Deus por causa da graça operada em Paulo — evidência de que o evangelho genuíno é fruto do poder divino."}
+        ],
+        2: [
+            {v:1, t:"Após 14 anos, Paulo sobe a Jerusalém com Barnabé e Tito (grego incircunciso). Contexto do concílio (Atos 15)."},
+            {v:2, t:"Comunica o evangelho aos líderes em particular, para garantir que seu labor não fosse em vão — não por dúvida, mas para confirmar unidade."},
+            {v:3, t:"Tito, gentio convertido, não foi compelido a circuncidar-se. Vitória da liberdade contra falsos irmãos."},
+            {v:4, t:"Falsos irmãos intrusos espiaram a liberdade em Cristo; objetivavam escravizar os crentes — ameaça ao evangelho puro."},
+            {v:5, t:"Paulo não cedeu nem por um instante, para que a verdade do evangelho permanecesse com os gálatas. Firmeza apostólica."},
+            {v:6, t:"Líderes ‘de reputação’ nada acrescentaram a Paulo; Deus não aceita parcialidade. Autoridade apostólica confirmada."},
+            {v:7, t:"Assim como Pedro foi encarregado do evangelho da circuncisão, Paulo o foi dos incircuncisos — missões distintas, mesmo evangelho."},
+            {v:8, t:"Deus operou eficazmente em Pedro para apostolado aos judeus, e em Paulo para os gentios. Soberania divina."},
+            {v:9, t:"Tiago, Pedro e João deram a destra de comunhão a Paulo e Barnabé, reconhecendo a graça; Paulo deveria lembrar-se dos pobres."},
+            {v:10, t:"Recomendação dos pobres: zelo que Paulo já demonstrava. Equilíbrio entre doutrina e misericórdia."},
+            {v:11, t:"Em Antioquia, Pedro se afastou dos gentios por medo dos judaizantes. Confronto público de Paulo."},
+            {v:12, t:"Antes da chegada de certos homens da parte de Tiago, Pedro comia com gentios; depois retirou-se, influenciando outros."},
+            {v:13, t:"Barnabé também foi levado pela dissimulação. A hipocrisia ameaçava a essência do evangelho da graça."},
+            {v:14, t:"Paulo o repreendeu publicamente: 'Se tu, sendo judeu, vives como gentio, por que obrigas os gentios a viver como judeus?'."},
+            {v:15, t:"Judeus de nascimento, não ‘pecadores dentre os gentios’ — reconhecimento da posição hereditária, mas não suficiente para justificação."},
+            {v:16, t:"O homem não é justificado por obras da lei, senão pela fé em Cristo; por obras da lei nenhuma carne será justificada."},
+            {v:17, t:"Se buscando justificação em Cristo somos achados pecadores, é Cristo ministro do pecado? De modo nenhum!"},
+            {v:18, t:"Reconstruir o que foi destruído (a lei como sistema de justificação) constitui transgressor. A graça não pode ser misturada com legalismo."},
+            {v:19, t:"Por meio da lei morri para a lei, a fim de viver para Deus. Estou crucificado com Cristo."},
+            {v:20, t:"Já não sou eu quem vive, mas Cristo vive em mim; a vida presente na carne vivo pela fé do Filho de Deus que me amou e se entregou por mim."},
+            {v:21, t:"Não anulo a graça de Deus; se a justiça vem pela lei, então Cristo morreu em vão. Centro da carta: justificação pela graça mediante fé."}
+        ],
+        3: [
+            {v:1, t:"Gálatas insensatos: foram enfeitiçados por falsos mestres, sendo que Jesus Cristo foi exposto crucificado diante deles."},
+            {v:2, t:"Recebestes o Espírito pelas obras da lei ou pela pregação da fé? A experiência inicial mostra que a fé basta."},
+            {v:3, t:"Tendo começado no Espírito, quereis aperfeiçoar pela carne? (obras da lei). Incoerência espiritual."},
+            {v:4, t:"Tantos sofrimentos em vão? Se realmente foi em vão, mas Paulo acredita que não."},
+            {v:5, t:"Deus que opera milagres entre vós o faz pelas obras da lei ou pela fé? O poder divino acompanha o evangelho da graça."},
+            {v:6, t:"Abraão creu em Deus, e isso lhe foi imputado como justiça — pai da fé, não das obras."},
+            {v:7, t:"Os que são da fé são filhos de Abraão. A verdadeira descendência abraâmica é espiritual."},
+            {v:8, t:"As Escrituras prevendo que Deus justificaria os gentios pela fé, anunciaram o evangelho a Abraão: 'Em ti serão benditas todas as nações'."},
+            {v:9, t:"Os que são da fé são benditos com o crente Abraão. A bênção não vem pela lei, mas pela fé."},
+            {v:10, t:"Todos os que dependem das obras da lei estão sob maldição, pois escrito: Maldito todo aquele que não permanecer em todas as coisas escritas."},
+            {v:11, t:"Pela lei ninguém é justificado diante de Deus, porque o justo viverá pela fé (Habacuque 2:4)."},
+            {v:12, t:"A lei não é da fé; quem fizer as coisas viverá por elas — princípio oposto ao da graça."},
+            {v:13, t:"Cristo nos resgatou da maldição da lei, fazendo-se maldição por nós (morte no madeiro)."},
+            {v:14, t:"Para que a bênção de Abraão alcançasse os gentios em Cristo, e recebêssemos o Espírito pela fé."},
+            {v:15, t:"Testamento humano firmado ninguém anula; muito menos o pacto de Deus."},
+            {v:16, t:"As promessas foram feitas a Abraão e à sua semente, que é Cristo. Unidade na promessa messiânica."},
+            {v:17, t:"A lei, que veio 430 anos depois, não anula a aliança previamente ratificada por Deus."},
+            {v:18, t:"Se a herança vem da lei, já não vem da promessa; mas Deus prometeu-a a Abraão mediante promessa."},
+            {v:19, t:"A lei foi acrescentada por causa das transgressões, até que viesse a semente (Cristo), sendo ordenada por anjos mediante um mediador (Moisés)."},
+            {v:20, t:"Mediador envolve mais de um, mas Deus é um. A lei tem caráter mediado, a promessa é direta."},
+            {v:21, t:"A lei é contrária às promessas? De modo nenhum! Se pudesse dar vida, a justiça seria pela lei."},
+            {v:22, t:"A Escritura encerrou tudo sob o pecado, para que a promessa pela fé em Jesus Cristo fosse dada aos crentes."},
+            {v:23, t:"Antes da fé, estávamos presos sob a lei, guardados para a fé que se revelaria."},
+            {v:24, t:"A lei foi nosso aio (tutor) para nos conduzir a Cristo, a fim de sermos justificados pela fé."},
+            {v:25, t:"Vinda a fé, já não estamos debaixo do aio."},
+            {v:26, t:"Todos sois filhos de Deus pela fé em Cristo Jesus."},
+            {v:27, t:"Quantos fostes batizados em Cristo vos revestistes de Cristo."},
+            {v:28, t:"Não há judeu nem grego, escravo nem livre, homem nem mulher; todos sois um em Cristo Jesus."},
+            {v:29, t:"Se sois de Cristo, então sois descendentes de Abraão e herdeiros conforme a promessa."}
+        ],
+        4: [
+            {v:1, t:"O herdeiro enquanto menor difere em nada do escravo, mesmo sendo senhor de tudo."},
+            {v:2, t:"Está sob tutores e curadores até o tempo determinado pelo pai."},
+            {v:3, t:"Também nós, quando menores, estávamos servilmente sujeitos aos rudimentos do mundo."},
+            {v:4, t:"Vindo a plenitude do tempo, Deus enviou seu Filho, nascido de mulher, nascido sob a lei."},
+            {v:5, t:"Para remir os que estavam sob a lei, a fim de recebermos a adoção de filhos."},
+            {v:6, t:"Porque sois filhos, Deus enviou aos vossos corações o Espírito de seu Filho, que clama: Aba, Pai."},
+            {v:7, t:"Não sois mais servo, mas filho; e se filho, também herdeiro por Deus."},
+            {v:8, t:"Outrora servistes aos que por natureza não são deuses."},
+            {v:9, t:"Agora conhecendo a Deus (melhor: sendo conhecidos), como tornais aos rudimentos fracos e pobres?"},
+            {v:10, t:"Guardais dias, meses, tempos e anos — práticas legalistas vãs."},
+            {v:11, t:"Receio de que tenha trabalhado em vão entre vós. Pastoral e grave."},
+            {v:12, t:"Paulo suplica: 'Tornai-vos como eu, porque também eu me fiz como vós'. Relação fraterna."},
+            {v:13, t:"Evangelizei na primeira vez por causa de enfermidade da carne."},
+            {v:14, t:"Não me desprezastes; antes me recebestes como anjo de Deus."},
+            {v:15, t:"Onde está vossa bem-aventurança? Testemunho vos daria os olhos."},
+            {v:16, t:"Tornei-me vosso inimigo por vos dizer a verdade?"},
+            {v:17, t:"Os falsos mestres vos cortejam sem boa intenção, querem vos excluir para que os busqueis."},
+            {v:18, t:"É bom ser cortejado pelo bem sempre, não só quando presente."},
+            {v:19, t:"Meus filhos, por quem de novo sinto dores de parto até Cristo seja formado em vós."},
+            {v:20, t:"Gostaria de estar presente agora e mudar o tom; estou perplexo a vosso respeito."},
+            {v:21, t:"Dizei-me vós que quereis estar sob a lei: não ouvis a lei?"},
+            {v:22, t:"Abraão teve dois filhos: um da escrava, outro da livre."},
+            {v:23, t:"O da escrava nasceu segundo a carne; o da livre mediante a promessa."},
+            {v:24, t:"São duas alianças: uma do monte Sinai (Hagar), gerando filhos para escravidão."},
+            {v:25, t:"Hagar representa o monte Sinai na Arábia, corresponde à atual Jerusalém escrava com seus filhos."},
+            {v:26, t:"A Jerusalém celestial é livre, e é nossa mãe."},
+            {v:27, t:"Alegra-te estéril que não dás à luz; porque mais são os filhos da desolada do que da que tem marido."},
+            {v:28, t:"Nós, irmãos, somos filhos da promessa como Isaque."},
+            {v:29, t:"Assim como o que nasceu segundo a carne perseguia o da promessa, também agora."},
+            {v:30, t:"Lançai fora a escrava e seu filho, pois o filho da escrava não herdará com o filho da livre."},
+            {v:31, t:"Portanto, irmãos, não somos filhos da escrava, mas da livre."}
+        ],
+        5: [
+            {v:1, t:"Cristo nos libertou para a liberdade; permanecei firmes e não vos submetais ao jugo da servidão."},
+            {v:2, t:"Se vos deixardes circuncidar, Cristo de nada vos aproveitará."},
+            {v:3, t:"Obrigado a guardar toda a lei; a circuncisão implica dívida total."},
+            {v:4, t:"Separados de Cristo, caídos da graça os que buscam justificação pela lei."},
+            {v:5, t:"Nós, pelo Espírito, aguardamos a esperança da justiça pela fé."},
+            {v:6, t:"Em Cristo Jesus nem circuncisão nem incircuncisão tem valor, mas a fé que opera pelo amor."},
+            {v:7, t:"Corríeis bem; quem vos impediu de obedecer à verdade?"},
+            {v:8, t:"Essa persuasão não vem daquele que vos chama."},
+            {v:9, t:"Um pouco de fermento leveda toda a massa."},
+            {v:10, t:"Confiança no Senhor que não tereis outro sentimento; o perturbador será julgado."},
+            {v:11, t:"Se ainda prego a circuncisão, por que sou perseguido? Escândalo da cruz removido."},
+            {v:12, t:"Oxalá se mutilassem os que vos andam perturbando!"},
+            {v:13, t:"Liberdade não pretexto para carne; mediante amor servi uns aos outros."},
+            {v:14, t:"Toda lei se cumpre num preceito: Amarás ao próximo como a ti mesmo."},
+            {v:15, t:"Se vos mordeis e devorais, vede que não vos consumais uns aos outros."},
+            {v:16, t:"Andai em Espírito e não satisfareis a concupiscência da carne."},
+            {v:17, t:"Carne luta contra Espírito, para não fazerdes o que quereis."},
+            {v:18, t:"Se sois guiados pelo Espírito, não estais debaixo da lei."},
+            {v:19, t:"Obras da carne: prostituição, impureza, lascívia."},
+            {v:20, t:"Idolatria, feitiçaria, inimizades, porfias, ciúmes, iras, discórdias, dissensões, facções."},
+            {v:21, t:"Invejas, bebedices, glutonarias; os que praticam tais coisas não herdarão o reino de Deus."},
+            {v:22, t:"Fruto do Espírito: amor, gozo, paz, longanimidade, benignidade, bondade, fidelidade."},
+            {v:23, t:"Mansidão, domínio próprio; contra essas coisas não há lei."},
+            {v:24, t:"Os que são de Cristo crucificaram a carne com as paixões e concupiscências."},
+            {v:25, t:"Se vivemos no Espírito, andemos também no Espírito."},
+            {v:26, t:"Não sejamos presunçosos, provocando uns aos outros, invejando."}
+        ],
+        6: [
+            {v:1, t:"Irmãos, se alguém for surpreendido nalguma falta, vós espirituais restaurai-o com espírito de mansidão, cuidando de ti mesmo."},
+            {v:2, t:"Levai as cargas uns dos outros e cumprireis a lei de Cristo."},
+            {v:3, t:"Quem pensa ser algo não sendo nada, engana a si mesmo."},
+            {v:4, t:"Cada um examine a sua própria obra, terá glória somente em si mesmo."},
+            {v:5, t:"Cada um levará seu próprio fardo (prestação de contas pessoal)."},
+            {v:6, t:"Quem é instruído na palavra, participe de todos os bens com o que o instrui."},
+            {v:7, t:"Não vos enganeis: de Deus não se zomba; o que o homem semear, isso também ceifará."},
+            {v:8, t:"Quem semeia para carne ceifará corrupção; quem semeia para Espírito ceifará vida eterna."},
+            {v:9, t:"Não nos cansemos de fazer o bem; a seu tempo ceifaremos se não desfalecermos."},
+            {v:10, t:"Enquanto temos oportunidade, faça o bem a todos, principalmente aos domésticos da fé."},
+            {v:11, t:"Vede com que grandes letras vos escrevo de próprio punho."},
+            {v:12, t:"Os que querem ostentar na carne vos forçam a circuncidar-se só para não serem perseguidos por causa da cruz."},
+            {v:13, t:"Nem eles mesmos guardam a lei, mas desejam gloriar-se na vossa carne."},
+            {v:14, t:"Longe de mim gloriar-me senão na cruz de Cristo, pela qual o mundo está crucificado para mim e eu para o mundo."},
+            {v:15, t:"Nem circuncisão nem incircuncisão vale coisa alguma, mas sim ser nova criatura."},
+            {v:16, t:"Para quantos andarem conforme esta regra, paz e misericórdia sobre o Israel de Deus."},
+            {v:17, t:"Ninguém me moleste; trago no corpo as marcas de Jesus."},
+            {v:18, t:"A graça de nosso Senhor Jesus Cristo seja com vosso espírito, irmãos. Amém."}
+        ]
+    };
+
+    // Função para renderizar os versículos do capítulo selecionado
+    function renderChapter(chapterNum) {
+        const container = document.getElementById('versesContainer');
+        const commentsArray = commentary[chapterNum];
+        
+        if (!commentsArray || commentsArray.length === 0) {
+            container.innerHTML = '<div class="empty-message">❌ Comentário não disponível para este capítulo.</div>';
+            return;
+        }
+
+        let html = '';
+        for (let item of commentsArray) {
+            html += `
+                <div class="card">
+                    <div class="verse">📖 Gálatas ${chapterNum}:${item.v}</div>
+                    <div class="comment-text">✧ ${item.t}</div>
+                </div>
+            `;
+        }
+        container.innerHTML = html;
+    }
+
+    // Evento ao mudar o select
+    const selectEl = document.getElementById('capSelect');
+    function handleChapterChange() {
+        const chapter = parseInt(selectEl.value, 10);
+        renderChapter(chapter);
+    }
+
+    selectEl.addEventListener('change', handleChapterChange);
+    
+    // Render inicial: Capítulo 1
+    renderChapter(1);
+</script>
+
+</body>
+</html>
+```
